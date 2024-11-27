@@ -1,9 +1,16 @@
+//Biblioteca
+
 #include <stdio.h>
 
+//Definindo o tamanho do vetor
 #define TAM 7
 
+//função da ordenação
 void selection_sort(int *vet, int tam_vet)
 {
+    //declarando as variaveis, indice menor armazenara a posição do menor valor não ordenado
+    //aux servira para fazer as trocas de posição.
+    //i, j e k são variaveis para os loops
     int indicemenor, aux, i, j, k;
     
     //percorre o vetor
@@ -24,15 +31,18 @@ void selection_sort(int *vet, int tam_vet)
                 printf("%d ", vet[k]);
                 }
                 printf("\n");
+            //a troca acontece nessas 3 linhas abaixo
             aux = vet[i];
             vet[i] = vet[indicemenor];
             vet[indicemenor] = aux;
+            
             printf("Vetor após troca: ");
             for (k = 0; k < TAM; k++) {
                 printf("%d ", vet[k]);
             }
             printf("\n");
         }else {
+            //caso não seja feita nenhuma troca exibe essa mensagem
             printf("\n");
             printf("Nenhuma troca necessária nesta iteração.\n");
             
@@ -42,6 +52,7 @@ void selection_sort(int *vet, int tam_vet)
 
 int main()
 {
+    //declaração do vetor
     int vetor[TAM] = {6, 3, 2 , 1, 5 , 4 , 0};
     int i;
 
@@ -51,6 +62,7 @@ int main()
         printf("%d ", vetor[i]);
     }
     printf("\n");
+    //chamada da função de ordenação
     selection_sort(vetor,TAM);
     printf("\nVETOR ORDENADO:\n");
     for (i = 0; i < TAM; i++) {
